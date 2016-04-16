@@ -1,0 +1,47 @@
+﻿@model MVCpgs.Models.UserContact
+@{
+    ViewBag.Title = "Contact";
+    <h2>@ViewBag.Title.</h2>
+    <h3>@ViewBag.Message</h3>
+}
+   
+
+<address>
+    One Microsoft Way<br />
+    Redmond, WA 98052-6399<br />
+    <abbr title="Phone">P:</abbr>
+    425.555.0100
+</address>
+<body>
+    @using (Html.BeginForm("Contact", "home", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <h4>Send your comments.</h4>
+        <hr />
+
+        @Html.ValidationSummary()
+        //<p>Imie i Nazwisko: @Html.TextBoxFor(x => x.Name) </p>
+        <p>@Html.LabelFor(x => x.Name) @Html.TextBoxFor(x => x.Name) </p>
+
+        <p>@Html.LabelFor(x => x.Email) @Html.TextBoxFor(x => x.Email)</p>
+        <p>
+   @Html.LabelFor(x => x.LikeBeer)
+     @Html.DropDownListFor(x => x.LikeBeer, new[]
+{
+    new SelectListItem() {Text = "Tak, lubie!.", Value = bool.TrueString },
+    new SelectListItem() {Text = "Nie, nie lubie :(", Value = bool.FalseString }
+}, "wybierz opcje")
+        </p>
+        <p>@Html.LabelFor(x => x.MsgToUs) @Html.TextAreaFor(x => x.MsgToUs, new { @rows = 7, @cols = 35 }) </p>
+        <input type="submit" value="Wyślij zapytanie" />
+    }
+</body>
+<address>
+    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+</address>
+
+@section Scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

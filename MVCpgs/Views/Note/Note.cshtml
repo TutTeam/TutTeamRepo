@@ -1,0 +1,21 @@
+﻿@model MVCpgs.Models.NoteViewModels
+@{
+    ViewBag.Title = "Note";
+ }
+
+<body>
+    @using (Html.BeginForm("Note", "Note", FormMethod.Post))
+    {
+        //<p>Imie i Nazwisko: @Html.TextBoxFor(x => x.Name) </p>
+        <p>@Html.LabelFor(x => x.Name) @Html.TextBoxFor(x => x.Name) </p>
+
+        <p>@Html.LabelFor(x => x.Title) @Html.TextBoxFor(x => x.Title) </p>
+
+        <p>@Html.LabelFor(x => x.Note) @Html.TextBoxFor(x => x.Note)</p>
+
+        <p>@Html.LabelFor(x => x.hasz) @Html.TextBoxFor(x => x.hasz)</p>
+
+        <input type="submit" value="Wyślij zapytanie" />
+    }
+</body>
+

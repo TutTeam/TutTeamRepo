@@ -1,0 +1,21 @@
+﻿@model MVCpgs.Models.UserContact
+
+@{
+    ViewBag.Title = "" ;
+    <h2>@ViewBag.Title</h2>
+    <h3>@ViewBag.Message</h3>
+}
+   
+<div>
+    @if (Model.LikeBeer == true)
+    {
+     <h1>Dziekujemy za kontakt ,@Model.Name</h1>
+     @:postaramy sie oppowiedziec na twoje pytanie.
+    }
+    else
+    {
+     <h1>Nie okłamuj nas!  @Model.Name</h1>
+     @: Wiemy że lubisz ale żona ci zabrania.
+    }
+
+</div>
