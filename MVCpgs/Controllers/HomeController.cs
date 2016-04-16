@@ -23,6 +23,7 @@ namespace MVCpgs.Controllers
         public ActionResult Index()
         {
             var tmp = 8;
+            var tmp2 = 6;
             return View();
         }
 
