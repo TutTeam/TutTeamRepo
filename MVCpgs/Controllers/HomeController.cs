@@ -24,6 +24,7 @@ namespace MVCpgs.Controllers
         {
             var tmp = 8;
             var tmp2 = 6;
+            var tmp3 = 4;
             return View();
         }
 
